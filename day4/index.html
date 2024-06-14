@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+</head>
+<body>
+    <botton onclick="load()">clickMe</botton>
+    <script>
+        function load(){
+        const abj=new XMLHttpRequest();
+        abj.onload=function(){
+            const a=abj.responseText;
+            document.write(a)
+        }
+        abj.open("GET","http://localhost:3000/users",true)
+        abj.send();
+    }
+    </script>    
+</body>
+</html>

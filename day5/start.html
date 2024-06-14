@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Example</title>
+</head>
+<body>
+    
+    <my-tag></my-tag>
+    <!-- the below style tag over writes the inner style tag. to avoid this we use "const shadow" line:22
+          and callback using shadowroot line:26-->
+    <style>
+        h1{
+            color:blue;
+        }
+    </style>  
+    <h1> I am HTML TAG</h1>
+    <!-- always include shadow for custom tags -->
+    <script>
+        
+        class myTag extends HTMLElement{
+            constructor(){
+                super();
+                const shadow=this.attachShadow({mode:"open"});
+            }
+            connectedCallback(){
+                this.shadowRoot.innerHTML=`
+                <style>
+                    h1{
+                        color:red;
+                    }
+                </style>
+                    <h1> This is my tag</h1>`;
+            }
+        }
+        customElements.define("my-tag", myTag);   //name of the tag and object of the tag
+    </script>
+</body>
+</html>

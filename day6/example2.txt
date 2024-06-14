@@ -1,0 +1,76 @@
+----------------highest freq of fruits
+preferences> db.likes.aggregate([{$group:{"_id":"$like","faq":{$sum:1}}},{$sort:{"faq":-1}},{$limit:1}])
+[ { _id: 'banana', faq: 4 } ]
+preferences> db.likes.aggregate([{$group:{"_id":"$like","faq":{$sum:1}}},{$sort:{"faq":-1}},{$limit:2}])
+[ { _id: 'banana', faq: 4 }, { _id: 'orange', faq: 3 } ]
+
+
+--------------top 3
+
+preferences> db.likes.aggregate([ {$sort:{"score":-1}}, {$limit:3}, {$project:{"_id":0,name:1,score:1}}])
+[
+  { name: 'hannah', score: 99 },
+  { name: 'lovi', score: 98 },
+  { name: 'vish', score: 95 }
+]
+-----------------avg of fruits
+
+preferences> db.likes.aggregate([
+... {$group:{"_id":"$like","average":{$avg:"$score"}}}])
+[
+  { _id: 'banana', average: 87 },
+  { _id: 'apple', average: 95 },
+  { _id: 'orange', average: 79.66666666666667 },
+  { _id: 'grape', average: 66.66666666666667 }
+]
+
+----------------display who like banana
+preferences> db.likes.aggregate([
+... {$match:{like:"banana"}},
+... {$project:{"_id":0,name:1,like:1}}])
+[
+  { name: 'tris', like: 'banana' },
+  { name: 'lovi', like: 'banana' },
+  { name: 'lina', like: 'banana' },
+  { name: 'nandu', like: 'banana' }
+]
+
+
+---------------------list of people wholikecertain fruit
+
+preferences> db.likes.aggregate([{$group:{"_id":"$like","list of people":{$push:"$name"}}}])
+[
+  { _id: 'grape', 'list of people': [ 'kavi', 'navi', 'vikalp' ] },
+  {
+    _id: 'banana',
+    'list of people': [ 'tris', 'lovi', 'lina', 'nandu' ]
+  },
+  { _id: 'orange', 'list of people': [ 'hannah', 'hina', 'espina' ] },
+  { _id: 'apple', 'list of people': [ 'vish' ] }
+]
+-------------------------remove duplicates if any
+preferences> db.likes.aggregate([{$group:{"_id":"$like","list of people":{$addToSet:"$name"}}}])
+[
+  { _id: 'grape', 'list of people': [ 'navi', 'kavi', 'vikalp' ] },
+  { _id: 'apple', 'list of people': [ 'vish' ] },
+  { _id: 'orange', 'list of people': [ 'hina', 'hannah', 'espina' ] },
+  {
+    _id: 'banana',
+    'list of people': [ 'lovi', 'nandu', 'lina', 'tris' ]
+  }
+]
+----------------------------greater than 50
+preferences> db.likes.aggregate([ { $match: {score:{$gt:50} } }, { $project: { "_id": 0, name: 1 } }])
+[
+  { name: 'hannah' },
+  { name: 'lovi' },
+  { name: 'vish' },
+  { name: 'kavi' },
+  { name: 'lina' },
+  { name: 'hina' },
+  { name: 'espina' },
+  { name: 'navi' },
+  { name: 'nandu' }
+]
+
+-----------------------------

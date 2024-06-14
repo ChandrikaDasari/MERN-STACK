@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>JSON Example</title>
+    </head>
+    <body>
+        <script>
+            const txt='{"name":"Rajesh","DOB":"1998-11-05","fun":"function(){return this.name+this.DOB;}"}';
+            const o1=JSON.parse(txt);
+            o1.fun=eval('('+o1.fun+')')
+            document.write(o1.fun());
+            // {
+            //     if(key=="DOB")return new Date(value); 
+            //     else return (value);
+            // });
+            // o1.DOB=new Date(o1.DOB)
+            // alert(o1.DOB)
+        </script>
+    </body>
+</html>

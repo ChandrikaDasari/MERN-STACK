@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 20,
+      "gender": "Male",
+      "grades": {
+        "math": 85,
+        "science": 90,
+        "english": 88
+      },
+      "contact": {
+        "email": "johndoe@example.com",
+        "phone": "555-1234"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "age": 22,
+      "gender": "Female",
+      "grades": {
+        "math": 92,
+        "science": 89,
+        "english": 94
+      },
+      "contact": {
+        "email": "janesmith@example.com",
+        "phone": "555-5678"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Emily Johnson",
+      "age": 21,
+      "gender": "Female",
+      "grades": {
+        "math": 78,
+        "science": 85,
+        "english": 80
+      },
+      "contact": {
+        "email": "emilyjohnson@example.com",
+        "phone": "555-8765"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Michael Brown",
+      "age": 23,
+      "gender": "Male",
+      "grades": {
+        "math": 95,
+        "science": 92,
+        "english": 91
+      },
+      "contact": {
+        "email": "michaelbrown@example.com",
+        "phone": "555-4321"
+      }
+    }
+  ]
+  

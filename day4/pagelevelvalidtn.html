@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="fm" action="commands.txt" onsubmit="return myval()">
+        <input id="a" type="text" name="abc"><br>
+        <input type="submit" value="Click">
+    </form>
+    <script>
+        function myval(){
+            const x=document.getElementById("a").value;
+            if(x==NaN||x<5 || x>10){
+                alert("incorrect id");
+                return false;
+            }
+        }
+        </script>
+</body>
+</html>

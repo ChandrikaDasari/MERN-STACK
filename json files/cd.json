@@ -1,0 +1,41 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "saina",
+      "age": 20
+    },
+    {
+      "id": "2",
+      "name": "abdul",
+      "age": 21
+    },
+    {
+      "id": "3",
+      "name": "zeesha",
+      "age": 19
+    },
+    {
+      "id": 2,
+      "name": "sow",
+      "age": 13
+    },
+    {
+      "id": 2,
+      "name": "sow",
+      "age": 13
+    }
+  ],
+  "Teachers": [
+    {
+      "id": "1",
+      "name": "kavi",
+      "age": 40
+    },
+    {
+      "id": "2",
+      "name": "aravind",
+      "age": 39
+    }
+  ]
+}

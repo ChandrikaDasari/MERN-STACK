@@ -1,0 +1,13 @@
+[
+    {"id":1,"name":"tris","like":"banana","score":90},
+    {"id":2,"name":"hannah","like":"orange","score":99},
+    {"id":3,"name":"lovi","like":"banana","score":98},
+    {"id":4,"name":"vish","like":"apple","score":95},
+    {"id":5,"name":"kavi","like":"grape","score":80},
+    {"id":6,"name":"lina","like":"banana","score":85},
+    {"id":7,"name":"hina","like":"orange","score":76},
+    {"id":8,"name":"espina","like":"orange","score":64},
+    {"id":9,"name":"navi","like":"grape","score":70},
+    {"id":10,"name":"vikalp","like":"grape","score":50},
+    {"id":11,"name":"nandu","like":"apple","score":75}
+]

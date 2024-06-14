@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Examples</title>
+</head>
+<body>
+    <input type="radio" name="abc" class="gender" value="Male"/>Male</input>
+    <input type="radio" name="abc" class="gender" value="Female"/>Female</input>
+    <button onclick="fun()">Click Me</button>
+    <p id="b"></p>
+    <script>
+        function fun(){
+            const x=document.getElementsByClassName("gender");
+            // let txt=""  for checkbox
+            for(let i in x){
+                if(x[i].checked){
+                    alert(x[i].value);break;
+                }
+            }
+            document.getElementById('b').innerHTML=x.value;
+        }
+    </script>
+</body>
+</html>
